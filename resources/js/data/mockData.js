@@ -10,10 +10,22 @@ export const INITIAL_CLASSES = [
     teacherName: "Ibu Siti Rahmawati, S.Pd.",
     schedule: "Senin - Jumat, 07:30 - 12:00 WIB",
     room: "Gedung A, Ruang Kelas 4-A",
-    totalStudents: 28,
+    totalStudents: 10,
     badgeColor: "bg-blue-50 text-blue-700 border-blue-200",
     themeColor: "blue",
     description: "Kelas pembelajaran tematik terpadu, matematika dasar, dan penguatan karakter untuk siswa-siswi kelas 4-A.",
+    students: [
+      { id: "std-01", name: "Aisyah Humaira", nisn: "0014298101", absen: "01", gender: "Perempuan", guardian: "Bpk. Hendra", phone: "0812-3456-7801", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-02", name: "Bilal Ahmad", nisn: "0014298102", absen: "02", gender: "Laki-laki", guardian: "Bpk. Farhan", phone: "0812-3456-7802", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-03", name: "Bilqis Nabila", nisn: "0014298103", absen: "03", gender: "Perempuan", guardian: "Ibu Rahmi", phone: "0812-3456-7803", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-04", name: "Cantika Dewi", nisn: "0014298104", absen: "04", gender: "Perempuan", guardian: "Ibu Maya", phone: "0812-3456-7804", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-05", name: "Fauzan Azhim", nisn: "0014298105", absen: "05", gender: "Laki-laki", guardian: "Bpk. Ridwan", phone: "0812-3456-7805", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-06", name: "Muhammad Fathan", nisn: "0014298106", absen: "06", gender: "Laki-laki", guardian: "Ibu Lina", phone: "0812-3456-7806", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-07", name: "Nabila Zahra", nisn: "0014298107", absen: "07", gender: "Perempuan", guardian: "Bpk. Agus", phone: "0812-3456-7807", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-08", name: "Rafi Al-Ghifari", nisn: "0014298108", absen: "08", gender: "Laki-laki", guardian: "Bpk. Ilham", phone: "0812-3456-7808", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-09", name: "Rizky Pratama", nisn: "0014298109", absen: "09", gender: "Laki-laki", guardian: "Ibu Ratna", phone: "0812-3456-7809", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-10", name: "Salma Nuraini", nisn: "0014298110", absen: "10", gender: "Perempuan", guardian: "Ibu Desi", phone: "0812-3456-7810", joinedDate: "15 Juli 2026", status: "Aktif" }
+    ],
     materials: [
       {
         id: "mat-01-01",
@@ -257,10 +269,20 @@ export const INITIAL_CLASSES = [
     teacherName: "Ibu Siti Rahmawati, S.Pd.",
     schedule: "Senin - Jumat, 07:30 - 12:00 WIB",
     room: "Gedung A, Ruang Kelas 4-B",
-    totalStudents: 26,
+    totalStudents: 8,
     badgeColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
     themeColor: "emerald",
     description: "Kelas 4-B untuk mata pelajaran tematik kebangsaan, matematika ceria, dan keterampilan tangan.",
+    students: [
+      { id: "std-201", name: "Kenzo Al-Ghifari", nisn: "0014398201", absen: "01", gender: "Laki-laki", guardian: "Bpk. Bambang", phone: "0813-1122-3301", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-202", name: "Anisa Rahmadani", nisn: "0014398202", absen: "02", gender: "Perempuan", guardian: "Ibu Nurul", phone: "0813-1122-3302", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-203", name: "Bagus Setiawan", nisn: "0014398203", absen: "03", gender: "Laki-laki", guardian: "Bpk. Joko", phone: "0813-1122-3303", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-204", name: "Dinda Kirana", nisn: "0014398204", absen: "04", gender: "Perempuan", guardian: "Ibu Sari", phone: "0813-1122-3304", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-205", name: "Fathir Ar-Rasyid", nisn: "0014398205", absen: "05", gender: "Laki-laki", guardian: "Bpk. Hadi", phone: "0813-1122-3305", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-206", name: "Hana Khairunnisa", nisn: "0014398206", absen: "06", gender: "Perempuan", guardian: "Ibu Eni", phone: "0813-1122-3306", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-207", name: "Ibrahim Maulana", nisn: "0014398207", absen: "07", gender: "Laki-laki", guardian: "Bpk. Wahyu", phone: "0813-1122-3307", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-208", name: "Kirana Putri", nisn: "0014398208", absen: "08", gender: "Perempuan", guardian: "Ibu Yuni", phone: "0813-1122-3308", joinedDate: "15 Juli 2026", status: "Aktif" }
+    ],
     materials: [
       {
         id: "mat-02-01",
@@ -335,10 +357,20 @@ export const INITIAL_CLASSES = [
     teacherName: "Ibu Siti Rahmawati, S.Pd.",
     schedule: "Senin - Jumat, 07:30 - 12:30 WIB",
     room: "Gedung B, Ruang Kelas 5-A",
-    totalStudents: 30,
+    totalStudents: 8,
     badgeColor: "bg-purple-50 text-purple-700 border-purple-200",
     themeColor: "purple",
     description: "Kelas 5-A fokus pada penguatan matematika pecahan, bangun ruang, dan sains IPA.",
+    students: [
+      { id: "std-301", name: "Affan Gibran", nisn: "0013498301", absen: "01", gender: "Laki-laki", guardian: "Bpk. Syarif", phone: "0811-2233-4401", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-302", name: "Alya Safira", nisn: "0013498302", absen: "02", gender: "Perempuan", guardian: "Ibu Hesti", phone: "0811-2233-4402", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-303", name: "Bima Arya", nisn: "0013498303", absen: "03", gender: "Laki-laki", guardian: "Bpk. Dani", phone: "0811-2233-4403", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-304", name: "Chelsea Olivia", nisn: "0013498304", absen: "04", gender: "Perempuan", guardian: "Ibu Rina", phone: "0811-2233-4404", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-305", name: "Dzaky Fairuz", nisn: "0013498305", absen: "05", gender: "Laki-laki", guardian: "Bpk. Faisal", phone: "0811-2233-4405", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-306", name: "Keisha Aurelia", nisn: "0013498306", absen: "06", gender: "Perempuan", guardian: "Ibu Anita", phone: "0811-2233-4406", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-307", name: "Raditya Pratama", nisn: "0013498307", absen: "07", gender: "Laki-laki", guardian: "Bpk. Gunawan", phone: "0811-2233-4407", joinedDate: "15 Juli 2026", status: "Aktif" },
+      { id: "std-308", name: "Syifa Kamila", nisn: "0013498308", absen: "08", gender: "Perempuan", guardian: "Ibu Endang", phone: "0811-2233-4408", joinedDate: "15 Juli 2026", status: "Aktif" }
+    ],
     materials: [
       {
         id: "mat-03-01",
