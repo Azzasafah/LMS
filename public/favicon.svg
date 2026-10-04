@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="primary-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="board-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#065F46"/>
+    </linearGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Base Container -->
+  <rect width="64" height="64" rx="16" fill="url(#primary-grad)"/>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="white" stroke-width="1.2" stroke-opacity="0.25"/>
+
+  <!-- Papan Belajar Ceria SD -->
+  <g filter="url(#shadow)">
+    <!-- Bingkai Papan -->
+    <rect x="12" y="13" width="40" height="29" rx="4" fill="#FFFFFF"/>
+    <!-- Permukaan Papan Hijau -->
+    <rect x="14" y="15" width="36" height="25" rx="2.5" fill="url(#board-grad)"/>
+    
+    <!-- Tempat Kapur -->
+    <rect x="10" y="42" width="44" height="3" rx="1.5" fill="#E2E8F0"/>
+    <rect x="17" y="40.5" width="5" height="2" rx="0.6" fill="#F8FAFC"/>
+    <rect x="24" y="40.5" width="4" height="2" rx="0.6" fill="#FCD34D"/>
+
+    <!-- Buku Terbuka Putih -->
+    <path d="M 22 26 C 26 24.5, 29.5 25.5, 32 27 C 34.5 25.5, 38 24.5, 42 26 V 34 C 38 32.5, 34.5 33.5, 32 35 C 29.5 33.5, 26 32.5, 22 34 Z" fill="#FFFFFF" fill-opacity="0.95"/>
+    <line x1="32" y1="27" x2="32" y2="35" stroke="#047857" stroke-width="1" stroke-linecap="round"/>
+    
+    <!-- Bintang Prestasi Kuning Emas -->
+    <path d="M 40.5 18 L 41.3 20 L 43.5 20.3 L 41.8 21.8 L 42.3 23.9 L 40.5 22.8 L 38.7 23.9 L 39.2 21.8 L 37.5 20.3 L 39.7 20 Z" fill="url(#gold-grad)"/>
+    
+    <!-- Kaki Penyangga Papan -->
+    <path d="M 18 45 L 14 53 M 46 45 L 50 53" stroke="#CBD5E1" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>
