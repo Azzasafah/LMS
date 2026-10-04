@@ -23,13 +23,8 @@ import {
 } from '@phosphor-icons/react';
 
 export function App() {
-  // Auth State (null jika belum login -> tampilkan LoginPage)
-  const [currentUser, setCurrentUser] = useState({
-    role: 'teacher',
-    name: 'Ibu Siti Rahmawati, S.Pd.',
-    avatar: 'SR',
-    title: 'Guru Kelas SD & Wali Kelas 4-A',
-  });
+  // Auth State (null = default menampilkan Halaman Login saat demo dimulai)
+  const [currentUser, setCurrentUser] = useState(null);
 
   const [currentRole, setCurrentRole] = useState('teacher'); // 'teacher' | 'student'
   const [activeTab, setActiveTab] = useState('kelas'); // 'kelas' | 'materi' | 'tugas' | 'evaluasi'
