@@ -19,12 +19,17 @@ import {
   SquaresFour,
   CaretDown,
   Star,
-  Plus
+  Plus,
+  Heart,
+  Sparkle,
+  ArrowRight,
+  X
 } from '@phosphor-icons/react';
 
 export function App() {
   // Auth State (null = default menampilkan Halaman Login saat demo dimulai)
   const [currentUser, setCurrentUser] = useState(null);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
 
   const [currentRole, setCurrentRole] = useState('teacher'); // 'teacher' | 'student'
   const [activeTab, setActiveTab] = useState('kelas'); // 'kelas' | 'materi' | 'tugas' | 'evaluasi'
@@ -34,6 +39,7 @@ export function App() {
   const handleLogin = (userData) => {
     setCurrentUser(userData);
     setCurrentRole(userData.role);
+    setShowWelcomeModal(true); // Pop-up kata-kata indah selamat datang
     if (userData.role === 'teacher') {
       setActiveTab('kelas');
     } else {
@@ -43,6 +49,7 @@ export function App() {
 
   const handleLogout = () => {
     setCurrentUser(null);
+    setShowWelcomeModal(false);
   };
 
   // Multi-Class State
@@ -605,6 +612,156 @@ export function App() {
         </footer>
 
       </div>
+
+      {/* ========================================================= */}
+      {/* MODAL POPUP: SELAMAT DATANG & KATA-KATA INDAH INSPIRATIF */}
+      {/* ========================================================= */}
+      {showWelcomeModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
+          <div className="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-7 shadow-2xl border border-slate-200 space-y-5 animate-scale-in relative overflow-hidden">
+            
+            {/* Background Decorative Glow */}
+            <div className={`absolute top-0 right-0 -mr-16 -mt-16 w-44 h-44 rounded-full blur-3xl opacity-30 pointer-events-none ${
+              currentRole === 'teacher' ? 'bg-purple-500' : 'bg-amber-400'
+            }`} />
+
+            {/* Header Modal */}
+            <div className="flex items-start justify-between relative z-10">
+              <div className="flex items-center gap-3">
+                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white shadow-md shrink-0 ${
+                  currentRole === 'teacher' 
+                    ? 'bg-linear-to-br from-purple-600 to-indigo-600' 
+                    : 'bg-linear-to-br from-amber-500 via-orange-500 to-blue-600'
+                }`}>
+                  {currentRole === 'teacher' ? (
+                    <ChalkboardTeacher size={26} weight="fill" />
+                  ) : (
+                    <GraduationCap size={26} weight="fill" />
+                  )}
+                </div>
+                <div>
+                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10.5px] font-bold tracking-wide ${
+                    currentRole === 'teacher'
+                      ? 'bg-purple-100 text-purple-800 border border-purple-200'
+                      : 'bg-amber-100 text-amber-900 border border-amber-200'
+                  }`}>
+                    <Sparkle size={12} weight="fill" />
+                    <span>{currentRole === 'teacher' ? 'Ruang Pendidik Berkarakter' : 'Generasi Bintang Juara'}</span>
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-1">
+                    {currentRole === 'teacher' 
+                      ? 'Selamat Datang, Ibu Siti Rahmawati! 🌸' 
+                      : 'Halo & Selamat Datang, Fathan! 🚀✨'}
+                  </h3>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setShowWelcomeModal(false)}
+                className="p-1.5 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+                title="Tutup Pesan"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Quote Card (Kata-Kata Indah & Inspiratif) */}
+            <div className={`p-4 sm:p-5 rounded-2xl border relative z-10 space-y-2 ${
+              currentRole === 'teacher'
+                ? 'bg-linear-to-br from-purple-50/80 via-indigo-50/50 to-pink-50/40 border-purple-200/80 text-slate-800'
+                : 'bg-linear-to-br from-blue-50/80 via-emerald-50/50 to-amber-50/40 border-blue-200/80 text-slate-800'
+            }`}>
+              <div className="flex items-center gap-1.5 text-xs font-bold text-slate-600 uppercase tracking-wider">
+                <Heart size={15} weight="fill" className={currentRole === 'teacher' ? 'text-pink-500' : 'text-rose-500'} />
+                <span>Pesan Inspiratif Hari Ini:</span>
+              </div>
+              
+              <blockquote className="text-xs sm:text-sm text-slate-700 italic font-medium leading-relaxed">
+                {currentRole === 'teacher' ? (
+                  <>
+                    &ldquo;Mengajar adalah seni menanam benih kebaikan, menyalakan pelita rasa ingin tahu, dan membentuk masa depan dengan penuh keikhlasan. Terima kasih atas dedikasi dan senyuman hangat Bu Guru yang tak pernah lelah membimbing putra-putri bangsa menjadi pribadi yang cerdas dan berkarakter mulia.&rdquo;
+                  </>
+                ) : (
+                  <>
+                    &ldquo;Setiap hari adalah petualangan seru untuk menemukan hal-hal baru! Jangan pernah takut salah, karena dari situlah kamu belajar menjadi hebat. Raih cita-citamu setinggi langit, rajinlah membaca, dan jadilah kebanggaan orang tua serta bapak/ibu guru ya!&rdquo;
+                  </>
+                )}
+              </blockquote>
+            </div>
+
+            {/* Sorotan Ringkas / Quick Highlights */}
+            <div className="grid grid-cols-3 gap-2.5 sm:gap-3 text-center relative z-10">
+              {currentRole === 'teacher' ? (
+                <>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <p className="text-[10px] text-slate-400 font-bold uppercase">Kelas Aktif</p>
+                    <p className="text-xs sm:text-sm font-extrabold text-blue-700 mt-0.5 truncate">
+                      {activeClass?.title?.split(' ')[0]} {activeClass?.title?.split(' ')[1]}
+                    </p>
+                    <p className="text-[10px] text-slate-500">{activeClass?.totalStudents} Murid</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <p className="text-[10px] text-slate-400 font-bold uppercase">Bahan Ajar</p>
+                    <p className="text-xs sm:text-sm font-extrabold text-emerald-700 mt-0.5">
+                      {activeClass?.materials?.length || 0} Pelajaran
+                    </p>
+                    <p className="text-[10px] text-slate-500">Video & Modul PDF</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <p className="text-[10px] text-slate-400 font-bold uppercase">Tugas Murid</p>
+                    <p className="text-xs sm:text-sm font-extrabold text-rose-700 mt-0.5">
+                      {activeClass?.assignments?.length || 0} Tugas
+                    </p>
+                    <p className="text-[10px] text-slate-500">Siap Dievaluasi</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <p className="text-[10px] text-slate-400 font-bold uppercase">Ruang Kelas</p>
+                    <p className="text-xs sm:text-sm font-extrabold text-blue-700 mt-0.5 truncate">
+                      {activeClass?.code}
+                    </p>
+                    <p className="text-[10px] text-slate-500 truncate">{activeClass?.title}</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <p className="text-[10px] text-slate-400 font-bold uppercase">Materi Siap</p>
+                    <p className="text-xs sm:text-sm font-extrabold text-emerald-700 mt-0.5">
+                      {activeClass?.materials?.length || 0} Pelajaran
+                    </p>
+                    <p className="text-[10px] text-slate-500">Ayo Tonton & Baca</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <p className="text-[10px] text-slate-400 font-bold uppercase">Misi PR</p>
+                    <p className="text-xs sm:text-sm font-extrabold text-amber-700 mt-0.5">
+                      Kumpul PR
+                    </p>
+                    <p className="text-[10px] text-slate-500">Dapatkan Bintang ⭐</p>
+                  </div>
+                </>
+              )}
+            </div>
+
+            {/* Tombol Aksi */}
+            <div className="flex items-center justify-end gap-3 pt-2 border-t border-slate-100 relative z-10">
+              <button
+                type="button"
+                onClick={() => setShowWelcomeModal(false)}
+                className={`w-full py-3 px-5 rounded-2xl text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer ${
+                  currentRole === 'teacher'
+                    ? 'bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-purple-200'
+                    : 'bg-linear-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 shadow-blue-200'
+                }`}
+              >
+                <span>{currentRole === 'teacher' ? 'Mulai Bimbing Murid Sekarang ✨' : 'Aku Siap Belajar Ceria! 🌟'}</span>
+                <ArrowRight size={16} weight="bold" />
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
 
     </div>
   );
